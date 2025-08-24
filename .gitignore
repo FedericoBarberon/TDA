@@ -1,0 +1,26 @@
+# Archivos y carpetas de VS Code
+.vscode/
+*.code-workspace
+
+# Archivos compilados de C++
+*.o
+*.obj
+*.gch
+*.pch
+
+# Ejecutables
+*.exe
+*.out
+*.app
+a.out
+
+# Librerías compiladas
+*.so
+*.dylib
+*.dll
+*.lib
+*.a
+
+# Archivos de dependencias
+*.d
+
