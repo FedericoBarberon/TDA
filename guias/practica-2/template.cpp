@@ -18,7 +18,7 @@ const ll LINF = 1e18;
 // Funciones auxiliares
 // ---------------------------------------------------
 template <typename T>
-void print_vec(const vector<T> &v)
+void printVec(const vector<T> &v)
 {
     for (auto &x : v)
         cout << x << " ";
@@ -26,7 +26,7 @@ void print_vec(const vector<T> &v)
 }
 
 template <typename T>
-T divide_conquer(vector<T> &arr) {}
+T divideConquer(vector<T> &arr) {}
 
 // ---------------------------------------------------
 // Main
@@ -41,7 +41,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    auto ans = divide_conquer(arr);
+    auto ans = divideConquer(arr);
 
     cout << ans << "\n";
     return 0;

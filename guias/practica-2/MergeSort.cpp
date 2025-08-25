@@ -14,7 +14,7 @@ const long long LINF = 1e18;
 // Funciones auxiliares
 // ---------------------------------------------------
 template <typename T>
-void print_vec(const vector<T> &v)
+void printVec(const vector<T> &v)
 {
     for (auto &x : v)
         cout << x << " ";
@@ -81,6 +81,6 @@ int main()
 
     vector<int> ans = mergeSort(arr);
 
-    print_vec(ans);
+    printVec(ans);
     return 0;
 }

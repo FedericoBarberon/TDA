@@ -27,7 +27,7 @@ pushd "%dir%"
 
 :: Compilar con g++
 echo Compilando %src% ...
-g++ -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector "%src%" -o "%name%.exe"
+g++ -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector "%src%" -o "out/%name%.exe"
 if errorlevel 1 (
     echo Error en la compilacion.
     popd
@@ -38,7 +38,7 @@ if errorlevel 1 (
 echo ====================================
 echo Ejecutando %name%.exe
 echo ====================================
-"%name%.exe"
+"out/%name%.exe"
 
 :: Volver a la carpeta original
 popd

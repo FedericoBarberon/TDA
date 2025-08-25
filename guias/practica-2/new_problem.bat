@@ -18,4 +18,3 @@ if not exist template.cpp (
 copy template.cpp %fname% >nul
 
 echo Archivo creado: %fname%
-pause
