@@ -16,18 +16,25 @@ set dir=%~dp1
 :: Nombre base del archivo (sin extensión)
 set name=%~n1
 
+set outdir=%dir%/out
+
 :: Verificar si existe
 if not exist "%src%" (
     echo ERROR: No se encuentra %src%
     exit /b
 )
 
+
 :: Ir a la carpeta del archivo
 pushd "%dir%"
 
+if not exist "out" (
+    mkdir out
+)
+
 :: Compilar con g++
 echo Compilando %src% ...
-g++ -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector "%src%" -o "out/%name%.exe"
+g++ -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector "%src%" -o "%outdir%/%name%.exe"
 if errorlevel 1 (
     echo Error en la compilacion.
     popd
@@ -38,7 +45,7 @@ if errorlevel 1 (
 echo ====================================
 echo Ejecutando %name%.exe
 echo ====================================
-"out/%name%.exe"
+"%outdir%/%name%.exe"
 
 :: Volver a la carpeta original
 popd

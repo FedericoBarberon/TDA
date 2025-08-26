@@ -1,36 +1,9 @@
 #include <bits/stdc++.h>
+#include <utils.h>
 using namespace std;
 
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(nullptr);
-#define all(v) (v).begin(), (v).end()
-#define sz(x) (int)(x).size()
+int divideConquer(vecInt &arr) { return 0; }
 
-using ll = long long;
-using vecInt = vector<int>;
-using matInt = vector<vecInt>;
-
-const int INF = 1e9;
-const ll LINF = 1e18;
-
-// ---------------------------------------------------
-// Funciones auxiliares
-// ---------------------------------------------------
-template <typename T>
-void printVec(const vector<T> &v)
-{
-    for (auto &x : v)
-        cout << x << " ";
-    cout << "\n";
-}
-
-template <typename T>
-T divideConquer(vector<T> &arr) {}
-
-// ---------------------------------------------------
-// Main
-// ---------------------------------------------------
 int main()
 {
     fastio;

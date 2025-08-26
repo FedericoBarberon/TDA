@@ -1,25 +1,7 @@
 #include <bits/stdc++.h>
+#include "utils.h"
+
 using namespace std;
-
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(nullptr);
-#define all(v) (v).begin(), (v).end()
-#define sz(x) (int)(x).size()
-
-const int INF = 1e9;
-const long long LINF = 1e18;
-
-// ---------------------------------------------------
-// Funciones auxiliares
-// ---------------------------------------------------
-template <typename T>
-void printVec(const vector<T> &v)
-{
-    for (auto &x : v)
-        cout << x << " ";
-    cout << "\n";
-}
 
 vector<int> merge(const vector<int> &l, const vector<int> &r)
 {
@@ -66,9 +48,6 @@ vector<int> mergeSort(const vector<int> &arr)
     return merge(sortedLeft, sortedRight);
 }
 
-// ---------------------------------------------------
-// Main
-// ---------------------------------------------------
 int main()
 {
     fastio;

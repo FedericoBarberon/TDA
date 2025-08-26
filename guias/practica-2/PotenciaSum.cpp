@@ -1,29 +1,7 @@
 #include <bits/stdc++.h>
+#include "utils.h"
+
 using namespace std;
-
-#define fastio                   \
-    ios::sync_with_stdio(false); \
-    cin.tie(nullptr);
-#define all(v) (v).begin(), (v).end()
-#define sz(x) (int)(x).size()
-
-using ll = long long;
-using vecInt = vector<int>;
-using matInt = vector<vecInt>;
-
-const int INF = 1e9;
-const ll LINF = 1e18;
-
-// ---------------------------------------------------
-// Funciones auxiliares
-// ---------------------------------------------------
-template <typename T>
-void printVec(const vector<T> &v)
-{
-    for (auto &x : v)
-        cout << x << " ";
-    cout << "\n";
-}
 
 matInt multiplicarMatrices(const matInt &A, const matInt &B)
 {
@@ -83,14 +61,11 @@ matInt potenciaSum(const matInt &A, int n)
     return sumaMatriz(rec, multiplicarMatrices(half, rec));
 }
 
-// ---------------------------------------------------
-// Main
-// ---------------------------------------------------
 int main()
 {
     fastio;
 
-    int n = 4;
+    int n = 10;
     matInt mat = {
         {2, 3, 6, 3},
         {1, 4, 7, -1},
