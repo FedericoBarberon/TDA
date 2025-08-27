@@ -10,9 +10,12 @@
 #define all(v) (v).begin(), (v).end()
 #define sz(x) (int)(x).size()
 
+template <typename T>
+using matriz = std::vector<std::vector<T>>;
+
 using ll = long long;
 using vecInt = std::vector<int>;
-using matInt = std::vector<vecInt>;
+using matInt = matriz<int>;
 
 const int INF = 1e9;
 const ll LINF = 1e18;
@@ -20,9 +23,26 @@ const ll LINF = 1e18;
 template <typename T>
 void printVec(const std::vector<T> &v)
 {
-    for (T x : v)
-        std::cout << x << " ";
-    std::cout << "\n";
+    std::cout << "[";
+    for (int i = 0; i < sz(v); i++)
+    {
+        std::cout << v[i];
+        if (i < sz(v) - 1)
+            std::cout << ", ";
+    }
+    std::cout << "]\n";
+}
+
+template <typename T>
+void printMat(const matriz<T> &m)
+{
+    std::cout << "[\n";
+    for (int i = 0; i < sz(m); i++)
+    {
+        std::cout << "    ";
+        printVec(m[i]);
+    }
+    std::cout << "]\n";
 }
 
 #endif
