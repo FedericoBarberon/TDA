@@ -3,10 +3,10 @@
 
 using namespace std;
 
-matInt multiplicarMatrices(const matInt &A, const matInt &B)
+matriz<int> multiplicarMatrices(const matriz<int> &A, const matriz<int> &B)
 {
     int n = sz(A);
-    matInt C(n, vector<int>(n, 0));
+    matriz<int> C(n, vector<int>(n, 0));
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             for (int k = 0; k < n; k++)
@@ -14,10 +14,10 @@ matInt multiplicarMatrices(const matInt &A, const matInt &B)
     return C;
 }
 
-matInt sumaMatriz(const matInt &A, const matInt &B)
+matriz<int> sumaMatriz(const matriz<int> &A, const matriz<int> &B)
 {
     int n = sz(A);
-    matInt sum(n, vecInt(n));
+    matriz<int> sum(n, vecInt(n));
 
     for (int i = 0; i < n; i++)
     {
@@ -30,15 +30,15 @@ matInt sumaMatriz(const matInt &A, const matInt &B)
     return sum;
 }
 
-matInt potenciaMatriz(const matInt &A, int p)
+matriz<int> potenciaMatriz(const matriz<int> &A, int p)
 {
     if (p == 1)
     {
         return A;
     }
 
-    matInt half = potenciaMatriz(A, p / 2);
-    matInt res = multiplicarMatrices(half, half);
+    matriz<int> half = potenciaMatriz(A, p / 2);
+    matriz<int> res = multiplicarMatrices(half, half);
 
     if (p % 2 != 0)
     {
@@ -48,15 +48,15 @@ matInt potenciaMatriz(const matInt &A, int p)
     return res;
 }
 
-matInt potenciaSum(const matInt &A, int n)
+matriz<int> potenciaSum(const matriz<int> &A, int n)
 {
     if (n == 1)
     {
         return A;
     }
 
-    matInt half = potenciaMatriz(A, n / 2);
-    matInt rec = potenciaSum(A, n / 2);
+    matriz<int> half = potenciaMatriz(A, n / 2);
+    matriz<int> rec = potenciaSum(A, n / 2);
 
     return sumaMatriz(rec, multiplicarMatrices(half, rec));
 }
@@ -66,7 +66,7 @@ int main()
     fastio;
 
     int n = 10;
-    matInt mat = {
+    matriz<int> mat = {
         {2, 3, 6, 3},
         {1, 4, 7, -1},
         {5, 6, 5, 3},
